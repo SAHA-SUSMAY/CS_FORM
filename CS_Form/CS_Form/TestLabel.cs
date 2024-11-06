@@ -10,6 +10,7 @@ namespace CS_Form
 {
     internal class TestLabel : Label
     {
+        string globaltext;
         public TestLabel(string str, int x, int y,
             int width, int height)
         {
@@ -17,6 +18,11 @@ namespace CS_Form
             Location = new Point(x, y);
             Size = new Size(width, height);
 
+        }
+        public void TextUpdate(string str)
+        {
+            globaltext = globaltext+str;
+            Text = globaltext;
         }
 
     }

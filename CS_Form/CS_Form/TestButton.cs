@@ -10,8 +10,10 @@ namespace CS_Form
 {
     internal class TestButton : Button
     {
-        public TestButton(int id, int x, int y, int width, int height)
+        Form1 _form1;
+        public TestButton(Form1 form1,int id, int x, int y, int width, int height)
         {
+            _form1 = form1;
             Click += OnClick;
             Text = id.ToString();
             Location = new Point(x, y);
@@ -21,7 +23,7 @@ namespace CS_Form
 
         public void OnClick(object sender, EventArgs s)
         {
-            MessageBox.Show(Text);
+            _form1.LabelTextUpdate(Text);
         }
     }
 }
