@@ -13,26 +13,42 @@ namespace CS_Form
     public partial class Form1 : Form
     {
         TestLabel _testLabel;
+        Test_TextBox _testBox;
+
         public Form1()
         {
-            
             InitializeComponent();
+            string[] strs ={
+            "",
+            };
 
             for (int i = 0; i < 10; i++)
             {
-                TestButton testButton = new TestButton(this,i, (i % 5) * 100, (i / 5) * 100, 100, 100);
+                TestButton testButton = new TestButton(this, i,(i % 5) * 100, (i / 5) * 100, 100, 100);
                 Controls.Add(testButton);
             }
 
-            _testLabel = new TestLabel("らべるです。", 10, 300, 100, 500);
+            _testLabel = new TestLabel("らべるです。", 10,200,500,100);
             Controls.Add(_testLabel);
 
+            _testBox = new Test_TextBox("textboxです。", 10, 300, 500, 100);
+            Controls.Add(_testBox);
 
+
+            //Label label = new Label();
+            //label.Location = new Point(30,400);
+            //label.Text = "らべるです。";
+            //Controls.Add(label);
         }
 
+        /// <summary>
+        /// ラベルの文字を更新する
+        /// </summary>
+        /// <param name="str"></param>
         public void LabelTextUpdate(string str)
         {
             _testLabel.TextUpdate(str);
         }
+
     }
 }

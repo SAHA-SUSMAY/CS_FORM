@@ -6,9 +6,10 @@ using System.Windows.Forms;
 
 namespace CS_Form
 {
-    internal static class Program
+    static class Program
     {
-        /// The main entry point for the application.
+        /// <summary>
+        /// アプリケーションのメイン エントリ ポイントです。
         /// </summary>
         [STAThread]
         static void Main()
