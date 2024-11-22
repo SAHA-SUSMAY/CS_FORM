@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CS_Form
 {
@@ -18,13 +19,23 @@ namespace CS_Form
         public Form1()
         {
             InitializeComponent();
-            string[] strs ={
-            "",
+            string[] strs =
+            {
+                "あか",
+                "あお",
+                "きいろ",
+                "みどり",
+                "くろ",
+                "しろ",
+                "ちゃいろ",
+                "ピンク",
+                "むらさき",
+                "きみどり"
             };
 
             for (int i = 0; i < 10; i++)
             {
-                TestButton testButton = new TestButton(this, i,(i % 5) * 100, (i / 5) * 100, 100, 100);
+                TestButton testButton = new TestButton(this, strs[i],(i % 5) * 100, (i / 5) * 100, 100, 100);
                 Controls.Add(testButton);
             }
 
@@ -48,6 +59,14 @@ namespace CS_Form
         public void LabelTextUpdate(string str)
         {
             _testLabel.TextUpdate(str);
+        }
+
+        public string ButtonLabelReplacement(string str)
+        {
+            string s = _testBox.TextReplacement(str);
+
+
+            return s;
         }
 
     }

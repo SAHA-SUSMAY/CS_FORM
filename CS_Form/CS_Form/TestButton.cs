@@ -18,7 +18,7 @@ namespace CS_Form
         /// コンストラクタ
         /// クラスを生成したときに呼び出される
         /// </summary>
-        public TestButton(Form1 form1, int id , int x, int y, int width, int height)
+        public TestButton(Form1 form1, string str , int x, int y, int width, int height)
         {
 
             //課題4のこたえ
@@ -30,7 +30,7 @@ namespace CS_Form
             Click += OnClick;
 
             // ボタン内に文字を表示させる
-            Text = id.ToString();
+            Text = str;
 
             // ボタンの生成場所を指定
             Location = new Point(x, y);
@@ -44,14 +44,12 @@ namespace CS_Form
 
 
         }
-
-        /// <summary>
-        /// ボタンをクリックした際の処理を記述する
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="s"></param>
         public void OnClick(object sender, EventArgs s)
         {
+            string t = _form1.ButtonLabelReplacement(Text);
+
+            Text = t;
+
             _form1.LabelTextUpdate(Text);
         }
     }
